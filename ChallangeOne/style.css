@@ -1,0 +1,20 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /**conversor para que 1rem sea igial a 10 pixeles**/
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+
+  }.contenido{
+    width: 94rem;
+    margin: 0 auto;
+    display: flex;
+   
+    
+}
+.formulario{
+    width: 2fr;
+}
+.area-mostrar{
+    
+}
