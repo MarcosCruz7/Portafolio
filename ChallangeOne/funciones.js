@@ -77,8 +77,31 @@ btnEncriptar.addEventListener("click", function() {
     // Aquí puedes hacer algo con el valor de texto, como encriptarlo
 });
 	
+function desencriptar(text2){
+    
+	let palabras2 = text2.split(/[ ,;:]+/);
+	console.log(palabras2);
 
-		
+	
+	let nuevoTexto = text2.replace(/ai/g, "a");
+	console.log(nuevoTexto);
+	nuevoTexto = nuevoTexto.replace(/enter/g, "e");
+	console.log(nuevoTexto);
+	nuevoTexto = nuevoTexto.replace(/imes/g, "i");
+	console.log(nuevoTexto);
+	nuevoTexto = nuevoTexto.replace(/ober/g, "o");
+	console.log(nuevoTexto);
+	nuevoTexto = nuevoTexto.replace(/ufat/g, "u");
+	console.log(nuevoTexto);
+    return nuevoTexto;
+}
+
+let btnDesencriptar = document.getElementById("btnDesencriptar");
+btnDesencriptar.addEventListener("click", function() {
+    let desencrip = desencriptar(obtener());
+    console.log(desencrip);
+    // Aquí puedes hacer algo con el valor de texto, como encriptarlo
+});
 
 
 
