@@ -96,6 +96,7 @@ function eliminarCopiar(mensaje){
 
 	// Crear un nuevo párrafo
 	var nuevoParrafo = document.createElement("p");
+	nuevoParrafo.classList.add("res");
 
 	// Asignar el contenido deseado al nuevo párrafo
 	nuevoParrafo.textContent = mensaje;
@@ -103,10 +104,11 @@ function eliminarCopiar(mensaje){
 	// Agregar el nuevo párrafo al DOM
 	contenedor.appendChild(nuevoParrafo);
 	
+	
     let btnCopiar = document.createElement("button");
     btnCopiar.innerText = "Copiar";
     btnCopiar.classList.add("boton");
-    miDiv.parentNode.appendChild(btnCopiar);
+    miDiv.parentNode.appendChild(btnCopiar,miDiv.nextSibling);
 
     btnCopiar.addEventListener("click", function() {
         navigator.clipboard.writeText(mensaje).then(function() {

@@ -1,37 +1,43 @@
-html {
-    box-sizing: border-box;
-    font-size: 62.5%; /**conversor para que 1rem sea igial a 10 pixeles**/
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-}
+
 body{
     background: #d1e7ff;
 }
 header{
-    width: 940px;
-    margin: 0 auto;
-    padding: 5rem 0 0 5rem;
+    max-width: 100%;
+    padding: 5rem 1rem 0;
     text-align: left;
 }
 .contenido{
-    width: 940px;
+    max-width: 100%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
 }
 .formulario{
-    width: 70%;
-    padding: 5rem;
+    margin-bottom: 2rem;
+}
+.formulario textarea{
+    width: 100%;
+    height: 10rem;
+    margin: 2rem auto;
 }
 .formulario textarea{
     width: 80%;
-    height: 90%;
-    margin: 10rem auto 10rem auto;
+    height: 80%;
+    margin: 7rem auto 7rem auto;
+}
+.signo:before{
+    content: url('https://api.iconify.design/bi/exclamation-circle-fill.svg');
+}
+.signo{
+    font-style: italic;
+    font-weight: 12px;
+    font-weight: bold;
 }
 .boton{
-    width: 40%;
+    width: 45%;
     padding: 10px 0;
     margin: 0 10px 0 0px;
     font-size: 18px;
@@ -47,21 +53,47 @@ header{
 }
 .area-mostrar{
     
-    width: 30%;
-    margin: 0 auto;
-    padding: 100px 0 100px 0;
+    width: 80%;
+    height: 80%;
     background: #FFFFFF;
-    border: 15px;
-    border-radius: 15px;
-    text-align: center;
-    justify-content: center;
+    border: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.res{
+    color: orange;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 940px) {
+    .contenido{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+    }
+    .formulario{
+        grid-column: 1 / 2;
+    }
+    .area-mostrar{
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+ }
+ .res{
+    color: orange;
+    font-size: 20px;
 }
 .muneco{
     width: 80%;
 }
+
 .footer{
     text-align: center;
-    padding: 5rem;
+    padding: 5rem 1rem;
     background: linear-gradient(#d1e7ff ,#FFFFFF);
-    font-size: 20px;
+    font-size: 1.2rem;
 }
