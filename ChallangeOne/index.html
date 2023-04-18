@@ -12,25 +12,28 @@
         <h1><img src="imagenes/Logo.png" alt="Logo de Alura"></h1>
     </header>
     <main class="contenido">
-        <section class="Formulario" id="">
+        <section class="formulario" >
             <form action="">
-                <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+                <textarea name="texto" id="texto" cols="30" rows="10" placeholder="Escribe el texto aqui"></textarea>
                 <legend>solo letras minúsculas y sin acentos</legend>
-                <input type="submit" value="Encriptar" id="btnEncriptar">
-                <input type="submit" value="Desencriptar" id="btnDesencriptar">
+                <input type="button" class="boton" value="Encriptar" id="btnEncriptar">
+                <input type="button" class="boton" value="Desencriptar" id="btnDesencriptar">
             </form>
         </section>
 
         
 
-        <section class="area-mostrar">
-            <img src="imagenes/Muñeco.png" alt="imagen de muñeco">
-            <p>Ningún Mensaje fue encontrado</p>
-            <p>Ingresa el texto que desees encriptar o desncriptar</p>
+        <section class="area-mostrar" id="contenedor">
+            <div id="mostrar">
+                <img id="imagen" src="imagenes/Muñeco.png" class="muneco" alt="imagen de muñeco">
+                <p id="resultado">Ningún Mensaje fue encontrado</p>
+                <p id="resultado2">Ingresa el texto que desees encriptar o desncriptar</p>
+            </div>
+            
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>Marcos Cruz Varela</p>
     </footer>
     <script src="funciones.js"></script>

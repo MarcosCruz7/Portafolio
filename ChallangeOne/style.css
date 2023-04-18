@@ -4,17 +4,64 @@ html {
   }
   *, *:before, *:after {
     box-sizing: inherit;
-
-  }.contenido{
-    width: 94rem;
+}
+body{
+    background: #d1e7ff;
+}
+header{
+    width: 940px;
+    margin: 0 auto;
+    padding: 5rem 0 0 5rem;
+    text-align: left;
+}
+.contenido{
+    width: 940px;
     margin: 0 auto;
     display: flex;
-   
-    
+    align-items: center;
+    justify-content: center;
 }
 .formulario{
-    width: 2fr;
+    width: 70%;
+    padding: 5rem;
+}
+.formulario textarea{
+    width: 80%;
+    height: 90%;
+    margin: 10rem auto 10rem auto;
+}
+.boton{
+    width: 40%;
+    padding: 10px 0;
+    margin: 0 10px 0 0px;
+    font-size: 18px;
+    background: rgb(161, 249, 249);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.boton:hover{
+    background: rgb(3, 155, 249);
+    color: #FFFFFF;
 }
 .area-mostrar{
     
+    width: 30%;
+    margin: 0 auto;
+    padding: 100px 0 100px 0;
+    background: #FFFFFF;
+    border: 15px;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+}
+.muneco{
+    width: 80%;
+}
+.footer{
+    text-align: center;
+    padding: 5rem;
+    background: linear-gradient(#d1e7ff ,#FFFFFF);
+    font-size: 20px;
 }

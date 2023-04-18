@@ -3,8 +3,6 @@ function obtener() {
     return valorTextarea;
 }
 
-
-
 function encriptar(text){
     
     let palabras = text.split(/[ ,;:]+/);
@@ -64,8 +62,10 @@ function encriptar(text){
 		for(let indice = 0; indice < encriptadas.length; indice++){
 			textoEncryptado = textoEncryptado + " " + encriptadas[indice];
 		}
+    
+        return textoEncryptado;
 
-        alert(textoEncryptado);
+
 }
 
 
@@ -74,8 +74,52 @@ let btnEncriptar = document.getElementById("btnEncriptar");
 btnEncriptar.addEventListener("click", function() {
     let encrip = encriptar(obtener());
     console.log(encrip);
-    // Aquí puedes hacer algo con el valor de texto, como encriptarlo
+    eliminarCopiar(encrip);
+
+    
 });
+
+function eliminarCopiar(mensaje){
+	let miDiv = document.getElementById("mostrar");
+    //let texto = document.createElement("p");
+    //texto.innerHTML = mensaje;
+    
+    var imagen = document.getElementById("imagen");
+	var resultado = document.getElementById("resultado");
+	var resultado2 = document.getElementById("resultado2");
+	var contenedor = document.getElementById("contenedor");
+
+	// Eliminar los elementos
+	imagen.remove();
+	resultado.remove();
+	resultado2.remove();
+
+	// Crear un nuevo párrafo
+	var nuevoParrafo = document.createElement("p");
+
+	// Asignar el contenido deseado al nuevo párrafo
+	nuevoParrafo.textContent = mensaje;
+
+	// Agregar el nuevo párrafo al DOM
+	contenedor.appendChild(nuevoParrafo);
+	
+    let btnCopiar = document.createElement("button");
+    btnCopiar.innerText = "Copiar";
+    btnCopiar.classList.add("boton");
+    miDiv.parentNode.appendChild(btnCopiar);
+
+    btnCopiar.addEventListener("click", function() {
+        navigator.clipboard.writeText(mensaje).then(function() {
+            console.log('Texto copiado al portapapeles');
+			location.reload();
+        }, function() {
+            console.error('No se pudo copiar el texto al portapapeles');
+        });
+    });
+}
+
+
+
 	
 function desencriptar(text2){
     
@@ -96,13 +140,14 @@ function desencriptar(text2){
     return nuevoTexto;
 }
 
-let btnDesencriptar = document.getElementById("btnDesencriptar");
-btnDesencriptar.addEventListener("click", function() {
+    let btnDesencriptar = document.getElementById("btnDesencriptar");
+    btnDesencriptar.addEventListener("click", function() {
     let desencrip = desencriptar(obtener());
     console.log(desencrip);
-    // Aquí puedes hacer algo con el valor de texto, como encriptarlo
+    var parrafo = document.getElementById("resultado");
+    parrafo.innerHTML = desencrip;
+	eliminarCopiar(desencrip);
 });
-
 
 
 	
